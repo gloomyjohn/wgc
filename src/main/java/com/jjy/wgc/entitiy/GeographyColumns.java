@@ -1,8 +1,8 @@
 package com.jjy.wgc.entitiy;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -21,7 +21,7 @@ import java.io.Serializable;
 @Setter
 @ToString
 @TableName("geography_columns")
-@ApiModel(value = "GeographyColumns对象", description = "")
+@Schema(name = "GeographyColumns对象", description = "")
 public class GeographyColumns implements Serializable {
 
     private static final long serialVersionUID = 1L;

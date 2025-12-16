@@ -2,8 +2,8 @@ package com.jjy.wgc.entitiy;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -22,7 +22,7 @@ import java.io.Serializable;
 @Setter
 @ToString
 @TableName("spatial_ref_sys")
-@ApiModel(value = "SpatialRefSys对象", description = "")
+@Schema(name = "SpatialRefSys对象", description = "")
 public class SpatialRefSys implements Serializable {
 
     private static final long serialVersionUID = 1L;

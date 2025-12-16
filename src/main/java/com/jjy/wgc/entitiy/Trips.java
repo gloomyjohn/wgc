@@ -2,8 +2,8 @@ package com.jjy.wgc.entitiy;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -22,7 +22,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @ToString
-@ApiModel(value = "Trips对象", description = "核心的业务流水表，用于记录一次完整的出行服务。它在司机与乘客请求成功匹配后被创建，详细记载了从乘客被接取到送达目的地的全过程信息。")
+@Schema(name = "Trips对象", description = "核心的业务流水表，用于记录一次完整的出行服务。它在司机与乘客请求成功匹配后被创建，详细记载了从乘客被接取到送达目的地的全过程信息。")
 public class Trips implements Serializable {
 
     private static final long serialVersionUID = 1L;

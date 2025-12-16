@@ -3,8 +3,8 @@ package com.jjy.wgc.entitiy;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -24,7 +24,7 @@ import java.time.LocalDateTime;
 @Setter
 @ToString
 @TableName("forecast_snapshots")
-@ApiModel(value = "ForecastSnapshots对象", description = "存储了每一次预测任务所产生的详细、密集的时间序列数据。")
+@Schema(name = "ForecastSnapshots对象", description = "存储了每一次预测任务所产生的详细、密集的时间序列数据。")
 public class ForecastSnapshots implements Serializable {
 
     private static final long serialVersionUID = 1L;
