@@ -2,6 +2,7 @@ package com.jjy.wgc.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.jjy.wgc.entitiy.PathRecommendations;
+import com.jjy.wgc.entitiy.vo.PathRecommendationsVO;
 
 import java.util.List;
 
@@ -15,5 +16,5 @@ import java.util.List;
  */
 public interface IPathRecommendationsService extends IService<PathRecommendations> {
 
-    Object getRecommendedPath(Long driverId, String currentLocation, String destination);
+    PathRecommendationsVO getRecommendedPath(double[] driverLocation, double[] passengerLocation);
 }

@@ -9,7 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PathRecommendationsDTO {
     // 包括driver id 和 currentLocation
-    private Long driverId;
-    private String currentLocation;
-    private String destination;
+//    private Long driverId;
+//    private String currentLocation;
+//    private String destination;
+    private double[] driverLocation ;
+    private double[] passengerLocation;
 }

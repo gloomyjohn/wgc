@@ -5,11 +5,11 @@ import com.jjy.wgc.entitiy.PathRecommendations;
 import com.jjy.wgc.entitiy.dto.PathRecommendationsDTO;
 import com.jjy.wgc.entitiy.vo.PathRecommendationsVO;
 import com.jjy.wgc.service.IPathRecommendationsService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
 
 /**
  * <p>
@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author baomidou
  * @since 2025-12-11
  */
+@Slf4j
 @RestController
 @RequestMapping("/v1/pathRecommendations")
 @CrossOrigin(origins = "*")
@@ -41,21 +42,7 @@ public class PathRecommendationsController {
         return pathRecommendationsService.updateById(pathRecommendations) ? Result.success() : Result.fail();
     }
 
-    @RequestMapping("/query")
-    public Result query(PathRecommendations pathRecommendations) {
-        PathRecommendationsVO pathRecommendationsVO = new PathRecommendationsVO(
-                pathRecommendations.getRecommendationId(),
-                pathRecommendations.getDriverId(),
-                pathRecommendations.getStartNodeId(),
-                pathRecommendations.getRecommendedPath(),
-                pathRecommendations.getExpectedAllocationTimeSeconds(),
-                pathRecommendations.getStatus(),
-                pathRecommendations.getRecommendationTime(),
-                pathRecommendations.getCreatedAt(),
-                pathRecommendations.getUpdatedAt()
-        );
-        return pathRecommendationsService.getById(pathRecommendationsVO.getRecommendationId()) != null ? Result.success(pathRecommendationsVO) : Result.fail();
-    }
+
 
     @RequestMapping("/list")
     public Result list() {
@@ -64,15 +51,21 @@ public class PathRecommendationsController {
 
     // 接受包括司机id、当前位置的坐标、目的地的坐标
     @PostMapping("/getRec")
-    public Result getRec(PathRecommendationsDTO pathRecommendationsDTO) {
-        // 获取司机id
-        Long driverId = pathRecommendationsDTO.getDriverId();
-        // 获取当前位置
-        String currentLocation = pathRecommendationsDTO.getCurrentLocation();
-        // 获取目的地
-        String destination = pathRecommendationsDTO.getDestination();
-        // 获取推荐路径
-        Object recommendedPath = pathRecommendationsService.getRecommendedPath(driverId, currentLocation, destination);
-        return recommendedPath != null ? Result.success(recommendedPath): Result.fail();
+    public Result getRec(@RequestBody PathRecommendationsDTO pathRecommendationsDTO) {
+        // 使用log.info替代System.out.println，方便测试
+        log.info("===================== Received path request: =========================");
+        log.info("Driver:" + Arrays.toString(pathRecommendationsDTO.getDriverLocation()));
+        log.info("Passenger:" + Arrays.toString(pathRecommendationsDTO.getPassengerLocation()));
+
+        // todo
+        double[] driverLocation = pathRecommendationsDTO.getDriverLocation();
+        double[] passengerLocation = pathRecommendationsDTO.getPassengerLocation();
+        if (driverLocation == null || passengerLocation == null)
+            return Result.fail("Position Parameters are null.");
+//        Object recommendedPath = pathRecommendationsService.getRecommendedPath(driverLocation, passengerLocation);
+//        return recommendedPath != null ? Result.success(recommendedPath): Result.fail();
+        // 返回一个VO格式的 数据
+        PathRecommendationsVO pathRecommendationsVO = pathRecommendationsService.getRecommendedPath(driverLocation, passengerLocation);
+        return pathRecommendationsVO != null ? Result.success(pathRecommendationsVO): Result.fail("Path calculation failed.");
     }
 }
