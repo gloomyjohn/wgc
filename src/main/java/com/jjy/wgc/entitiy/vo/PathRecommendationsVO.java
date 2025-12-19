@@ -4,13 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PathRecommendationsVO {
+public class PathRecommendationsVO implements Serializable {
 //    private Long recommendationId;
 //
 //    private Long driverId;

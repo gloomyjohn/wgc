@@ -6,6 +6,7 @@ import com.jjy.wgc.entitiy.PathRecommendations;
 import com.jjy.wgc.entitiy.vo.PathRecommendationsVO;
 import com.jjy.wgc.mapper.PathRecommendationsMapper;
 import com.jjy.wgc.service.IPathRecommendationsService;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ import java.util.List;
  * @since 2025-12-11
  */
 @Service
+
 public class PathRecommendationsServiceImpl extends ServiceImpl<PathRecommendationsMapper, PathRecommendations> implements IPathRecommendationsService {
 
 //
@@ -34,6 +36,11 @@ public class PathRecommendationsServiceImpl extends ServiceImpl<PathRecommendati
 //    }
 
     @Override
+    @Cacheable(
+            value = "recommended_paths",
+            key = "#driverLocation[0] + ',' + #driverLocation[1] + '-' + #passengerLocation[0] + ',' + #passengerLocation[1]",
+            unless = "#result == null"
+    )
     public PathRecommendationsVO getRecommendedPath(double[] driverLocation, double[] passengerLocation) {
 //        PathRecommendationsVO pathRecommendationsVO = new PathRecommendationsVO();
 //        List<double []> bluePath = Arrays.asList(new double[][]{{1,2},{3,4},{5,6},{7,8},{9,10}});
@@ -43,6 +50,7 @@ public class PathRecommendationsServiceImpl extends ServiceImpl<PathRecommendati
 //        pathRecommendationsVO.setRedPaths(redPaths);
 //        pathRecommendationsVO.setRedSnappedStarts(List.of(new double[]{1, 2}));
 //        return pathRecommendationsVO;
+        System.out.println("⚡️ 缓存未命中，正在计算路径...");
         PathRecommendationsVO vo = new PathRecommendationsVO();
 
         // 1. 设置蓝色路径
