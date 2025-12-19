@@ -4,27 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class PathRecommendationsDTO {
-    private Long recommendationId;
-
+    // 包括driver id 和 currentLocation
     private Long driverId;
-
-    private Long startNodeId;
-
-    private Object recommendedPath;
-
-    private Double expectedAllocationTimeSeconds;
-
-    private String status;
-
-    private LocalDateTime recommendationTime;
-
-    private LocalDateTime createdAt;
-
-    private LocalDateTime updatedAt;
+    private String currentLocation;
+    private String destination;
 }

@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -44,7 +43,7 @@ public class PathRecommendationsController {
 
     @RequestMapping("/query")
     public Result query(PathRecommendations pathRecommendations) {
-        PathRecommendationsDTO pathRecommendationsDTO = new PathRecommendationsDTO(
+        PathRecommendationsVO pathRecommendationsVO = new PathRecommendationsVO(
                 pathRecommendations.getRecommendationId(),
                 pathRecommendations.getDriverId(),
                 pathRecommendations.getStartNodeId(),
@@ -55,7 +54,7 @@ public class PathRecommendationsController {
                 pathRecommendations.getCreatedAt(),
                 pathRecommendations.getUpdatedAt()
         );
-        return pathRecommendationsService.getById(pathRecommendationsDTO.getRecommendationId()) != null ? Result.success(pathRecommendationsDTO) : Result.fail();
+        return pathRecommendationsService.getById(pathRecommendationsVO.getRecommendationId()) != null ? Result.success(pathRecommendationsVO) : Result.fail();
     }
 
     @RequestMapping("/list")
@@ -65,13 +64,13 @@ public class PathRecommendationsController {
 
     // 接受包括司机id、当前位置的坐标、目的地的坐标
     @PostMapping("/getRec")
-    public Result getRec(PathRecommendationsVO pathRecommendationsVO) {
+    public Result getRec(PathRecommendationsDTO pathRecommendationsDTO) {
         // 获取司机id
-        Long driverId = pathRecommendationsVO.getDriverId();
+        Long driverId = pathRecommendationsDTO.getDriverId();
         // 获取当前位置
-        String currentLocation = pathRecommendationsVO.getCurrentLocation();
+        String currentLocation = pathRecommendationsDTO.getCurrentLocation();
         // 获取目的地
-        String destination = pathRecommendationsVO.getDestination();
+        String destination = pathRecommendationsDTO.getDestination();
         // 获取推荐路径
         Object recommendedPath = pathRecommendationsService.getRecommendedPath(driverId, currentLocation, destination);
         return recommendedPath != null ? Result.success(recommendedPath): Result.fail();

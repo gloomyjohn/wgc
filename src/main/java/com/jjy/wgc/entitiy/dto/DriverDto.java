@@ -1,5 +1,6 @@
 package com.jjy.wgc.entitiy.dto;
 
+import com.jjy.wgc.common.VehicleInfo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,8 +17,6 @@ public class DriverDto {
     private String currentStatus;
 
     private OffsetDateTime onboardedAt;
-
-    private Map<String, Object> vehicleInfo;
 
     private OffsetDateTime createdAt;
 

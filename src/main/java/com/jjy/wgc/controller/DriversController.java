@@ -46,7 +46,7 @@ public class DriversController {
             if (driversService.getById(drivers.getDriverId()) == null)
                 return Result.fail("No such driver./n");
             boolean result = driversService.updateById(drivers);
-            return result ? Result.success() : Result.fail("update faild.\n");
+            return result ? Result.success("Update Success") : Result.fail("update faild.\n");
         } catch (Exception e) {
             e.printStackTrace();
             return Result.fail("更新异常：" + e.getMessage());
@@ -56,7 +56,7 @@ public class DriversController {
 
     @PostMapping("/query")
     public Result query(Drivers drivers) {
-        DriverDto driverDto = new DriverDto(drivers.getDriverId(), drivers.getCurrentStatus(), drivers.getOnboardedAt(), drivers.getVehicleInfo(), drivers.getCreatedAt(), drivers.getUpdatedAt());
+        DriverDto driverDto = new DriverDto(drivers.getDriverId(), drivers.getCurrentStatus(), drivers.getOnboardedAt(), drivers.getCreatedAt(), drivers.getUpdatedAt());
         return driversService.getById(driverDto.getDriverId()) != null ? Result.success(driverDto) : Result.fail();
     }
 
