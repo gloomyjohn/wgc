@@ -2,7 +2,7 @@ package com.jjy.wgc.service.impl;
 
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.jjy.wgc.entitiy.GeometryColumns;
+import com.jjy.wgc.entitiy.po.GeometryColumns;
 import com.jjy.wgc.mapper.GeometryColumnsMapper;
 import com.jjy.wgc.service.IGeometryColumnsService;
 import org.springframework.stereotype.Service;

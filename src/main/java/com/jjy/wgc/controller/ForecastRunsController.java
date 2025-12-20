@@ -1,7 +1,7 @@
 package com.jjy.wgc.controller;
 
 import com.jjy.wgc.common.Result;
-import com.jjy.wgc.entitiy.ForecastRuns;
+import com.jjy.wgc.entitiy.po.ForecastRuns;
 import com.jjy.wgc.service.IForecastRunsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;

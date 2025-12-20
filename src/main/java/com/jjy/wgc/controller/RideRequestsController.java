@@ -1,12 +1,11 @@
 package com.jjy.wgc.controller;
 
 import com.jjy.wgc.common.Result;
-import com.jjy.wgc.entitiy.RideRequests;
+import com.jjy.wgc.entitiy.po.RideRequests;
 import com.jjy.wgc.entitiy.vo.RideRequestVO;
 import com.jjy.wgc.service.IRideRequestsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.stereotype.Controller;
 
 import java.util.List;
 

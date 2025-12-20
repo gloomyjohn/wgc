@@ -1,7 +1,7 @@
 package com.jjy.wgc.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.jjy.wgc.entitiy.PathRecommendations;
+import com.jjy.wgc.entitiy.po.PathRecommendations;
 
 /**
  * <p>

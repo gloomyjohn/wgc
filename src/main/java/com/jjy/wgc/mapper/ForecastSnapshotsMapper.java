@@ -1,7 +1,7 @@
 package com.jjy.wgc.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.jjy.wgc.entitiy.ForecastSnapshots;
+import com.jjy.wgc.entitiy.po.ForecastSnapshots;
 
 
 /**

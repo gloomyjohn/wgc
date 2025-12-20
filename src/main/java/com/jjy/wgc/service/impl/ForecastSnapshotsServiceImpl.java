@@ -1,7 +1,7 @@
 package com.jjy.wgc.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.jjy.wgc.entitiy.ForecastSnapshots;
+import com.jjy.wgc.entitiy.po.ForecastSnapshots;
 import com.jjy.wgc.mapper.ForecastSnapshotsMapper;
 
 

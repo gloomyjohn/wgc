@@ -2,7 +2,7 @@ package com.jjy.wgc.service.impl;
 
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.jjy.wgc.entitiy.Trips;
+import com.jjy.wgc.entitiy.po.Trips;
 import com.jjy.wgc.mapper.TripsMapper;
 import com.jjy.wgc.service.ITripsService;
 import org.springframework.stereotype.Service;

@@ -2,7 +2,7 @@ package com.jjy.wgc.service.impl;
 
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.jjy.wgc.entitiy.PathRecommendations;
+import com.jjy.wgc.entitiy.po.PathRecommendations;
 import com.jjy.wgc.entitiy.vo.PathRecommendationsVO;
 import com.jjy.wgc.mapper.PathRecommendationsMapper;
 import com.jjy.wgc.service.IPathRecommendationsService;
@@ -10,8 +10,6 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /**

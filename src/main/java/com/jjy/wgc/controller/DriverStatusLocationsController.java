@@ -1,7 +1,7 @@
 package com.jjy.wgc.controller;
 
 import com.jjy.wgc.common.Result;
-import com.jjy.wgc.entitiy.DriverStatusLocations;
+import com.jjy.wgc.entitiy.po.DriverStatusLocations;
 import com.jjy.wgc.service.IDriverStatusLocationsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;

@@ -2,7 +2,7 @@ package com.jjy.wgc.service.impl;
 
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.jjy.wgc.entitiy.ForecastRuns;
+import com.jjy.wgc.entitiy.po.ForecastRuns;
 import com.jjy.wgc.mapper.ForecastRunsMapper;
 import com.jjy.wgc.service.IForecastRunsService;
 import org.springframework.stereotype.Service;

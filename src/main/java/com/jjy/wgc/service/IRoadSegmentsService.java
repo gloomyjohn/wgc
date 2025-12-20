@@ -1,7 +1,7 @@
 package com.jjy.wgc.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.jjy.wgc.entitiy.RoadSegments;
+import com.jjy.wgc.entitiy.po.RoadSegments;
 
 /**
  * <p>

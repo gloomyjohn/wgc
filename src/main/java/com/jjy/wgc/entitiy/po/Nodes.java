@@ -1,4 +1,4 @@
-package com.jjy.wgc.entitiy;
+package com.jjy.wgc.entitiy.po;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 

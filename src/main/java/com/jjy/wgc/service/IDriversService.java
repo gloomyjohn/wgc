@@ -2,7 +2,7 @@ package com.jjy.wgc.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.jjy.wgc.entitiy.Drivers;
+import com.jjy.wgc.entitiy.po.Drivers;
 import com.jjy.wgc.entitiy.dto.DriverLocationDTO;
 
 /**

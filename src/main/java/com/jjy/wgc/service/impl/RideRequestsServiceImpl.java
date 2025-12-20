@@ -2,7 +2,7 @@ package com.jjy.wgc.service.impl;
 
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.jjy.wgc.entitiy.RideRequests;
+import com.jjy.wgc.entitiy.po.RideRequests;
 import com.jjy.wgc.mapper.RideRequestsMapper;
 import com.jjy.wgc.service.IRideRequestsService;
 import org.springframework.stereotype.Service;

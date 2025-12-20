@@ -1,7 +1,7 @@
 package com.jjy.wgc.controller;
 
 import com.jjy.wgc.common.Result;
-import com.jjy.wgc.entitiy.PathRecommendations;
+import com.jjy.wgc.entitiy.po.PathRecommendations;
 import com.jjy.wgc.entitiy.dto.PathRecommendationsDTO;
 import com.jjy.wgc.entitiy.vo.PathRecommendationsVO;
 import com.jjy.wgc.service.IPathRecommendationsService;

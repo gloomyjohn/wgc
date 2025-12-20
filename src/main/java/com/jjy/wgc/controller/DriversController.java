@@ -1,17 +1,12 @@
 package com.jjy.wgc.controller;
 
 import com.jjy.wgc.common.Result;
-import com.jjy.wgc.entitiy.Drivers;
+import com.jjy.wgc.entitiy.po.Drivers;
 import com.jjy.wgc.entitiy.dto.DriverDto;
 import com.jjy.wgc.entitiy.dto.DriverLocationDTO;
 import com.jjy.wgc.service.IDriversService;
-import com.jjy.wgc.service.impl.DriversServiceImpl;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.stereotype.Controller;
-
-import java.sql.SQLOutput;
 
 /**
  * <p>

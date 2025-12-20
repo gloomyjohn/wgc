@@ -2,7 +2,7 @@ package com.jjy.wgc.service.impl;
 
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.jjy.wgc.entitiy.SpatialRefSys;
+import com.jjy.wgc.entitiy.po.SpatialRefSys;
 import com.jjy.wgc.mapper.SpatialRefSysMapper;
 import com.jjy.wgc.service.ISpatialRefSysService;
 import org.springframework.stereotype.Service;

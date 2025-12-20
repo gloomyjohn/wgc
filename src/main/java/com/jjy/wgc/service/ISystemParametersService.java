@@ -1,7 +1,7 @@
 package com.jjy.wgc.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.jjy.wgc.entitiy.SystemParameters;
+import com.jjy.wgc.entitiy.po.SystemParameters;
 
 /**
  * <p>

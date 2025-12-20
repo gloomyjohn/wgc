@@ -2,7 +2,7 @@ package com.jjy.wgc.service.impl;
 
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.jjy.wgc.entitiy.RoadSegments;
+import com.jjy.wgc.entitiy.po.RoadSegments;
 import com.jjy.wgc.mapper.RoadSegmentsMapper;
 import com.jjy.wgc.service.IRoadSegmentsService;
 import org.springframework.stereotype.Service;

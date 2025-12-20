@@ -11,7 +11,7 @@ import com.baomidou.mybatisplus.extension.kotlin.KtUpdateChainWrapper;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.jjy.wgc.config.RabbitConfig;
-import com.jjy.wgc.entitiy.Drivers;
+import com.jjy.wgc.entitiy.po.Drivers;
 import com.jjy.wgc.entitiy.dto.DriverLocationDTO;
 import com.jjy.wgc.mapper.DriversMapper;
 import com.jjy.wgc.service.IDriversService;

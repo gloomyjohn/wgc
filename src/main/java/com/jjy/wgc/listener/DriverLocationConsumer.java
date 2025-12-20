@@ -1,9 +1,8 @@
 package com.jjy.wgc.listener;
 
-import com.jjy.wgc.entitiy.DriverStatusLocations;
+import com.jjy.wgc.entitiy.po.DriverStatusLocations;
 import com.jjy.wgc.entitiy.dto.DriverLocationDTO;
 import com.jjy.wgc.service.IDriverStatusLocationsService;
-import com.jjy.wgc.service.IDriversService;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

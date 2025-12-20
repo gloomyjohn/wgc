@@ -2,7 +2,7 @@ package com.jjy.wgc.service.impl;
 
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.jjy.wgc.entitiy.SystemParameters;
+import com.jjy.wgc.entitiy.po.SystemParameters;
 import com.jjy.wgc.mapper.SystemParametersMapper;
 import com.jjy.wgc.service.ISystemParametersService;
 import org.springframework.stereotype.Service;

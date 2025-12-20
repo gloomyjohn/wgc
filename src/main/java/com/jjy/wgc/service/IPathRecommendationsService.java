@@ -1,10 +1,8 @@
 package com.jjy.wgc.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.jjy.wgc.entitiy.PathRecommendations;
+import com.jjy.wgc.entitiy.po.PathRecommendations;
 import com.jjy.wgc.entitiy.vo.PathRecommendationsVO;
-
-import java.util.List;
 
 /**
  * <p>

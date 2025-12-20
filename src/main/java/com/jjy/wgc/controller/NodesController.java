@@ -1,7 +1,7 @@
 package com.jjy.wgc.controller;
 
 import com.jjy.wgc.common.Result;
-import com.jjy.wgc.entitiy.Nodes;
+import com.jjy.wgc.entitiy.po.Nodes;
 import com.jjy.wgc.service.INodesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;

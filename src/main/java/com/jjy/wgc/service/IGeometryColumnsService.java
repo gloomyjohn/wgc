@@ -1,7 +1,7 @@
 package com.jjy.wgc.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.jjy.wgc.entitiy.GeometryColumns;
+import com.jjy.wgc.entitiy.po.GeometryColumns;
 
 /**
  * <p>

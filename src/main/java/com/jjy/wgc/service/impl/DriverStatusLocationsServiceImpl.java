@@ -3,7 +3,7 @@ package com.jjy.wgc.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.jjy.wgc.mapper.DriverStatusLocationsMapper;
-import com.jjy.wgc.entitiy.DriverStatusLocations;
+import com.jjy.wgc.entitiy.po.DriverStatusLocations;
 import com.jjy.wgc.service.IDriverStatusLocationsService;
 import org.springframework.stereotype.Service;
 

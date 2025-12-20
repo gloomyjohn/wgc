@@ -1,7 +1,7 @@
 package com.jjy.wgc.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.jjy.wgc.entitiy.Drivers;
+import com.jjy.wgc.entitiy.po.Drivers;
 
 /**
  * <p>
