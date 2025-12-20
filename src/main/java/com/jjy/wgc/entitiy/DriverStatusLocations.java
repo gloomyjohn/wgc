@@ -42,4 +42,7 @@ public class DriverStatusLocations implements Serializable {
     private Double progressOnSegment;
 
     private LocalDateTime lastUpdatedAt;
+
+    private double latitude;
+    private double longitude;
 }

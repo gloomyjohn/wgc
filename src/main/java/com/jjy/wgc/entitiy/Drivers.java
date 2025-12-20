@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.jjy.wgc.common.Location;
 import com.jjy.wgc.common.VehicleInfo;
 import com.jjy.wgc.handler.VehicleInfoTypeHandler;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -43,4 +44,6 @@ public class Drivers implements Serializable {
     private OffsetDateTime createdAt;
 
     private OffsetDateTime updatedAt;
+
+
 }

@@ -10,9 +10,16 @@ import com.baomidou.mybatisplus.extension.kotlin.KtQueryChainWrapper;
 import com.baomidou.mybatisplus.extension.kotlin.KtUpdateChainWrapper;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.jjy.wgc.config.RabbitConfig;
 import com.jjy.wgc.entitiy.Drivers;
+import com.jjy.wgc.entitiy.dto.DriverLocationDTO;
 import com.jjy.wgc.mapper.DriversMapper;
 import com.jjy.wgc.service.IDriversService;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.geo.Point;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
@@ -32,6 +39,10 @@ import java.util.function.Function;
  */
 @Service
 public class DriversServiceImpl extends ServiceImpl<DriversMapper, Drivers> implements IDriversService {
+
+    @Qualifier("redisTemplate")
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     @Override
     public boolean saveBatch(Collection<Drivers> entityList) {
@@ -261,5 +272,23 @@ public class DriversServiceImpl extends ServiceImpl<DriversMapper, Drivers> impl
     @Override
     public LambdaUpdateChainWrapper<Drivers> lambdaUpdate() {
         return super.lambdaUpdate();
+    }
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+
+    // 更新司机位置 此为producer
+    @Override
+    public boolean updateLocation(DriverLocationDTO driverLocationDTO) {
+        try {// 存入redis
+            redisTemplate.opsForGeo().add("drivers:locations", new Point(driverLocationDTO.getLongitude(), driverLocationDTO.getLatitude()), driverLocationDTO.getDriverId());
+            // 发送消息给rabbitmq
+            System.out.println("📦 [RabbitMQ] 发送位置消息: " + driverLocationDTO.getDriverId());
+            rabbitTemplate.convertAndSend(RabbitConfig.QUEUE_NAME, driverLocationDTO);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 }

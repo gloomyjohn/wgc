@@ -3,6 +3,7 @@ package com.jjy.wgc.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.jjy.wgc.entitiy.Drivers;
+import com.jjy.wgc.entitiy.dto.DriverLocationDTO;
 
 /**
  * <p>
@@ -14,4 +15,5 @@ import com.jjy.wgc.entitiy.Drivers;
  */
 public interface IDriversService extends IService<Drivers> {
 
+    boolean updateLocation(DriverLocationDTO driverLocationDTO);
 }
