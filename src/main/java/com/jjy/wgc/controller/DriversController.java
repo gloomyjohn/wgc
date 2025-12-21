@@ -37,7 +37,8 @@ public class DriversController {
     }
     @PostMapping("/update")
     public Result update(@RequestBody Drivers drivers) {
-        System.out.println(drivers.getDriverId());
+
+        System.out.println(drivers);
         try {
             // 若table中没有数据
             if (driversService.getById(drivers.getDriverId()) == null)
