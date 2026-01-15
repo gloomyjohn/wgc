@@ -68,4 +68,16 @@ public class DriversController {
         return driversService.updateLocation(driverLocationDTO) ? Result.success("location update success") : Result.fail("location update failed");
     }
 
+    // 请求乘客
+    @PostMapping("/requestPassenger")
+    public Result requestPassenger(@RequestBody DriverLocationDTO driverLocationDTO){
+        // todo
+        // 在司机位置周围随机生成一个乘客坐标
+        double[] passengerLocation = new double[]{driverLocationDTO.getLatitude() + Math.random() * 0.01, driverLocationDTO.getLongitude() + Math.random() * 0.01};
+        return Result.success(passengerLocation);
+
+//        return driversService.requestPassenger(driverLocationDTO) ? Result.success("request passenger success") : Result.fail("request passenger failed");
+    }
+
+
 }
