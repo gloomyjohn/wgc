@@ -1,3 +1,6 @@
+<img width="865" height="426" alt="image" src="https://github.com/user-attachments/assets/39980821-9fcd-42ba-b240-ea08036795e2" />
+
+
 # WGC Taxi Simulator - Backend Service （English）
 This project is the backend service for the WGC Taxi Simulator. It is responsible for processing path planning algorithms (WGC algorithm) and providing driver trajectory data to the frontend.
 
