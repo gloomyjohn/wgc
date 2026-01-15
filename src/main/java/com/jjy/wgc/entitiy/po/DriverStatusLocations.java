@@ -10,6 +10,7 @@ import lombok.ToString;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 /**
  * <p>
@@ -41,8 +42,11 @@ public class DriverStatusLocations implements Serializable {
 
     private Double progressOnSegment;
 
-    private LocalDateTime lastUpdatedAt;
+    private OffsetDateTime lastUpdatedAt;
 
     private double latitude;
     private double longitude;
+
+    private double target_latitude;
+    private double target_longitude;
 }

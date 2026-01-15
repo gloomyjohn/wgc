@@ -4,10 +4,7 @@ import com.jjy.wgc.common.Result;
 import com.jjy.wgc.entitiy.po.DriverStatusLocations;
 import com.jjy.wgc.service.IDriverStatusLocationsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -18,8 +15,9 @@ import org.springframework.stereotype.Controller;
  * @author baomidou
  * @since 2025-12-11
  */
-@Controller
+@RestController
 @RequestMapping("/v1/driverStatusLocations")
+@CrossOrigin(origins = "*")
 public class DriverStatusLocationsController {
     @Autowired
     private IDriverStatusLocationsService driverStatusLocationsService;
