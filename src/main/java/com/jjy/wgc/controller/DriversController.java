@@ -5,8 +5,15 @@ import com.jjy.wgc.entitiy.po.Drivers;
 import com.jjy.wgc.entitiy.dto.DriverDto;
 import com.jjy.wgc.entitiy.dto.DriverLocationDTO;
 import com.jjy.wgc.service.IDriversService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -21,6 +28,7 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "*")
 public class DriversController {
 
+    private static final Logger log = LoggerFactory.getLogger(DriversController.class);
     @Autowired
     private IDriversService driversService;
 
@@ -77,6 +85,23 @@ public class DriversController {
         return Result.success(passengerLocation);
 
 //        return driversService.requestPassenger(driverLocationDTO) ? Result.success("request passenger success") : Result.fail("request passenger failed");
+    }
+
+    // 生成竞争司机坐标
+    @PostMapping("/requestRivalDrivers")
+    public Result requestRivalDriver(@RequestBody DriverLocationDTO driverLocationDTO){
+        log.info("driverLocationDTO:{}", driverLocationDTO);
+        // todo
+        // 在司机位置附近随机生成三个乘客坐标
+        List<Map<String, Object>> rivalDrivers = new ArrayList<>();
+        for (int i = 1; i <= 3; i++) {
+            Map<String, Object> driver = new HashMap<>();
+            driver.put("id", i);
+            driver.put("latitude", driverLocationDTO.getLatitude() + (Math.random() - 0.5) * 0.03);
+            driver.put("longitude", driverLocationDTO.getLongitude() + (Math.random() - 0.5) * 0.03);
+            rivalDrivers.add(driver);
+        }
+        return Result.success(rivalDrivers);
     }
 
 
